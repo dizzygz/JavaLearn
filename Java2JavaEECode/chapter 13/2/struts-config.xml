@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--  strutsµÄÅäÖÃÎÄ¼þstruts-config.xml  -->
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--
+      NOTE: If you have a generator tool to create the corresponding Java classes
+      for you, you could include the details in the "form-bean" declarations.
+      Otherwise, you would only define the "form-bean" element itself, with the
+      corresponding "name" and "type" attributes, as shown here.
+-->
+<!--  Ö÷ÒªµÄÅäÖÃÔÚstruts-configÖÐ  -->
+<struts-config>
+      <!--  ¶¨Òåformbean  -->
+      <form-beans>
+            <!--  nameÊÇformbeanµÄÃû×Ö,typeÊÇformbeanµÄÎ»ÖÃ  -->
+            <form-bean name="loginForm" type="LoginForm" />
+      </form-beans>
+      <global-exceptions>
+      </global-exceptions>
+      <!-- =================================== Global Forward Definitions -->
+      <!-- =================================== Action Mapping Definitions -->
+      <!--  action-mapping¶¨ÒåactionºÍactionÖÐµÄÌø×ª  -->
+      <action-mappings>
+            <action name="loginForm" path="/login" type="LoginAction">
+                  <forward name="login" path="/login.jsp"></forward>
+                  <forward name="success" path="/login_success.jsp"></forward>
+                  <forward name="failure" path="/login_failure.jsp"></forward>
+            </action>
+            <action name="loginForm" path="/change" type="ChangePassword
+                 Action">
+                  <forward name="change_success" path="/change_success.
+                       jsp"></forward>
+                  <forward name="change_failure" path="/change_failure.
+                        jsp"></forward>
+            </action>
+      </action-mappings>
+      <!-- ===================================== Controller Configuration -->
+      <!-- ================================ Message Resources Definitions -->
+      <!-- ======================================= Plug Ins Configuration -->
+</struts-config>

@@ -1,0 +1,94 @@
+import java.io.*;
+import java.util.*;
+
+class Main{
+	private int n1;
+	private int n2;
+	private int iNum; // the cycle length in current test
+	
+	public Main(int n1, int n2){
+		int tmp;
+		this.n1 = n1;
+		this.n2 = n2;
+		if(n1>n2){
+			tmp=this.n1;
+			this.n1=this.n2;
+			this.n2=tmp;
+		}
+		
+	}
+	
+	public void test(){
+		int maxNum=0;
+		int tmp=0;
+		for(int i=n1; i<=n2; i++){
+			tmp= print(i);			
+			maxNum= tmp>maxNum ? tmp:maxNum;
+			
+		}
+		//System.out.println("maxNum:"+maxNum);
+		iNum = maxNum;
+	}
+	
+	private int print(int i){
+		//System.out.println(i);
+		iNum++;
+		
+		if(i==1){
+			int tmp =iNum;
+			iNum=0;
+			return tmp;
+		}
+		else if (isEven(i)){
+			return print(i/2); 
+		}
+		else{
+			i = 3*i+1;
+			return print(i);
+		}
+	}
+	
+	public int getMaxNum(){
+		return iNum;
+	}
+	
+	private boolean isEven(int i){
+		return (i%2 == 0);
+	}
+	
+	public static void main(String[] args){
+		Scanner sc= new Scanner(System.in);
+		String line=null;
+		int[] n=null;;
+		Main TestThree=null;
+		//List<int[]> list = new LinkedList<>(); 
+		//System.out.println("Input format: int int\n Example:12 24");
+		try
+		{
+			while(sc.hasNextLine()){
+				line = sc.nextLine();
+				//System.out.println("DEBU 0:"+line);
+				if(line.matches("\\s*") ){
+					//System.out.println("DEBU: break "+line);
+					break;
+				} 
+				
+				n = new int[]{new Integer(line.split("\\s+")[0]), 
+				new Integer(line.split("\\s+")[1])};
+				if( n[0] <=0 || n[1]<=0 
+					|| n[0] >=1000000 || n[1]>=1000000)break;
+				
+				TestThree = new Main(n[0], n[1]);
+				TestThree.test();
+				System.out.println(n[0]+" "+n[1]+"  "+TestThree.getMaxNum());
+				//list.add(n);
+				
+			}	
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}		
+		
+		
+	}
+}

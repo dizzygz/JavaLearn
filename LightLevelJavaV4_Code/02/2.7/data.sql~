@@ -1,0 +1,16 @@
+drop database if exists javaee;
+create database javaee;
+
+use javaee;
+
+create table news_inf
+(
+	id int auto_increment primary key,
+	name varchar(255),
+	Age varchar(255),
+    Salary varchar(255)
+);
+
+insert into news_inf values
+(null,'Mike','30','5000'),
+(null,'Jhon'，'23','4580');

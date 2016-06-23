@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+<!--  hibernate-mapping定义VO和数据库表之间的映射关系  -->
+<hibernate-mapping>
+      <!--  User类对应了USER表  -->
+      <class name="User" table="USER">
+              <!--  主键用id代表  -->
+            <id name="id" column="CID">
+                  <generator class="increment" />
+            </id>
+              <!--  其余字段用property代表  -->
+            <property name="username" column="USERNAME" />
+            <property name="password" column="PASSWORD" />
+      </class>
+</hibernate-mapping>

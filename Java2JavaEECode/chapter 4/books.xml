@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><books>
+	<book author="Tom" email="tom@tpress.com">
+		<title>"The First book of Earth"</title>
+		<description>"Is our earth flat?NO, it's round!"
+		</description>
+	</book>
+	
+	<book author="Mike" email="mike@tpress.com">
+		<title>"The Best Yammy Food"</title>
+		<description>"Are you hungry? Here you go with the food!"
+		</description>
+	</book>
+	<book author="robert" email="robert@press.com">
+		<title>Keep Smile on Your FaceRobert will show you amazing effect of smiling.</title>
+		<description/>
+	</book>
+	
+	<book author="robert" email="robert@press.com">
+		<title>Keep Smile on Your Face</title>
+		<description>Robert will show you amazing effect of smiling.</description>
+	</book>
+	
+	<book author="robert" email="robert@press.com">
+		<title>Keep Smile on Your Face</title>
+		<description>Robert will show you amazing effect of smiling.</description>
+	</book>
+</books>
